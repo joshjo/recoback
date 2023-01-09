@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.0.7-alpine
+    restart: always
+    ports:
+      - 6388:6379
+  db:
+    image: nickblah/postgis:15.1-postgis-3.3.2
+    restart: always
+    environment:
+      POSTGRES_USER: reco
+      POSTGRES_PASSWORD: reco
+    ports:
+      - 5532:5432
+  web:
+    build:
+      dockerfile: dev/Dockerfile
+      context: .
+    image: 'reco/reco-backend'
+    depends_on:
+      - db
+    restart: always
+    stdin_open: true
+    tty: true
+    cap_add:
+      - ALL
+    ports:
+    - '8956:8956'
+    volumes:
+      - "/dev/shm:/dev/shm"
+      - ".:/code/:rw,cached"
