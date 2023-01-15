@@ -45,8 +45,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
+    "django_extensions",
     "rest_framework",
     "rest_framework.authtoken",
+    "leaflet",
     "apps.tracking",
 ]
 
@@ -148,3 +151,10 @@ REST_FRAMEWORK = {
     ]
 }
 
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (-16.39889, -71.535),
+    'DEFAULT_ZOOM': 16,
+    'MIN_ZOOM': 3,
+    'MAX_ZOOM': 18,
+    'DEFAULT_PRECISION': 6,
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Copyright (C) 2016 Google Inc.
+# Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
+
+set -e
+
+SCRIPTPATH=$( cd "$(dirname "$0")" ; pwd -P )
+
+python manage.py runserver 0.0.0.0:8956
