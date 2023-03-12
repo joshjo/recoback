@@ -152,9 +152,15 @@ REST_FRAMEWORK = {
 }
 
 LEAFLET_CONFIG = {
-    'DEFAULT_CENTER': (-16.39889, -71.535),
-    'DEFAULT_ZOOM': 16,
+    'DEFAULT_CENTER': (-16.4471921, -71.5579586),
+    'DEFAULT_ZOOM': 15,
     'MIN_ZOOM': 3,
     'MAX_ZOOM': 18,
     'DEFAULT_PRECISION': 6,
+}
+
+TRACKING = {
+    "CONFIG": {
+        "redis": "redis://redis:6379",
+    },
 }

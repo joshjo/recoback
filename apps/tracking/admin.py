@@ -17,7 +17,7 @@ class DriverModelAdmin(admin.ModelAdmin):
 
 
 @admin.register(District)
-class DistrictModelAdmin(admin.ModelAdmin):
+class DistrictModelAdmin(LeafletGeoAdminMixin, admin.ModelAdmin):
     pass
 
 

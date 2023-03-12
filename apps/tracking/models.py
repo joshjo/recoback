@@ -6,6 +6,7 @@ from core.models import BaseModel
 
 class District(BaseModel):
     name = models.CharField(max_length=255)
+    depot = models.PointField()
 
 
 class House(BaseModel):
@@ -17,7 +18,7 @@ class Path(BaseModel):
     district = models.ForeignKey(District, on_delete=models.CASCADE)
     init_time = models.TimeField()
     weekday = models.PositiveSmallIntegerField()
-    polygon = models.LineStringField(null=True)
+    polygon = models.LineStringField()
 
 
 class Truck(BaseModel):
@@ -33,6 +34,7 @@ class Driver(BaseModel):
 
 class Journey(BaseModel):
     driver = models.ForeignKey("Driver", on_delete=models.CASCADE)
+    path = models.ForeignKey("Path", on_delete=models.CASCADE)
     truck = models.ForeignKey("Truck", on_delete=models.CASCADE)
     start_at = models.DateTimeField(default=timezone.now)
     end_at = models.DateTimeField(blank=True, null=True)

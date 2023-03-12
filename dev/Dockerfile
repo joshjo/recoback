@@ -12,6 +12,8 @@ RUN /bin/sh -c set -ex; apt-get update; \
 
 WORKDIR /code
 
+ENV INSTANCE_NAME recoback
+
 COPY dev/.bashrc_web /root/.bashrc
 
 RUN mkdir -p /code/requirements
