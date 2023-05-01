@@ -14,6 +14,8 @@ services:
       POSTGRES_PASSWORD: reco
     ports:
       - 5532:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
   web:
     build:
       dockerfile: dev/Dockerfile
@@ -31,3 +33,5 @@ services:
     volumes:
       - "/dev/shm:/dev/shm"
       - ".:/code/:rw,cached"
+volumes:
+  pgdata:

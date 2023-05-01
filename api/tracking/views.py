@@ -19,4 +19,3 @@ class JourneyViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def perform_create(self, serializer):
         serializer.save(driver=self.request.user.driver)
-        serializer.push_to_store()

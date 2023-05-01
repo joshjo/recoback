@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, AnonymousUser
-from channels.db import database_sync_to_async
 
 from rest_framework.authtoken.models import Token
+
 from ws.utils import get_token_from_headers
 
 
