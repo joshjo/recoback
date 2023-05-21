@@ -1,6 +1,6 @@
-# Django Backend for Truck Tracking
+# Django Backend for Location Tracking
 
-This is the backend API for a truck tracking application that allows users to view the location of trucks in real-time and receive notifications when a truck passes near their registered location or follows a specific path. The backend is built with Django and supports web sockets with Django Channels for real-time functionality.
+This is the backend API for a api tracking application that allows users to view the location of other devices in real-time and receive notifications when a truck passes near their registered location or follows a specific path. The backend is built with Django and supports web sockets with Django Channels for real-time functionality.
 
 ## Prerequisites
 
@@ -39,10 +39,16 @@ docker-compose run web python manage.py migrate
 docker-compose run web python manage.py createsuperuser
 ```
 
-6. Run the development server:
+6. Start the development server:
 
 ```
 docker-compose up
+```
+
+7. Exec the bin file
+
+```
+docker-compose exec web bash && launch_reco
 ```
 
 The development server will be available at http://localhost:8000.
@@ -62,7 +68,3 @@ To deploy the app in production, you will need to build and run the Docker image
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
