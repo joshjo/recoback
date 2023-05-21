@@ -2,6 +2,10 @@
 
 This is the backend API for a api tracking application that allows users to view the location of other devices in real-time and receive notifications when a truck passes near their registered location or follows a specific path. The backend is built with Django and supports web sockets with Django Channels for real-time functionality.
 
+## Demo
+
+![demo_reco](https://github.com/joshjo/recoback/assets/1036364/0815e4ba-8c9a-4a79-9c05-7f698b5ef1cf)
+
 ## Prerequisites
 
 - Docker
